@@ -1,0 +1,13 @@
+<div style="text-align: center;margin: 3% 30%">
+  <h1>Search series</h1>
+  <input type="text" [(ngModel)]="searchInput" (keyup)="fetchSeries($event)" placeholder="enter series name">
+  <p>{{searchInput}}</p>
+
+  <ul>
+    <li *ngFor="let show of searchResult" (click)="showDetails(show)" [hidden]="toggle">
+      <p>{{show.name}}</p>
+      
+    </li>
+
+  </ul>
+</div>
